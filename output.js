@@ -1,546 +1,161 @@
-//Sat Apr 05 2025 13:09:01 GMT+0000 (Coordinated Universal Time)
+//Mon Apr 14 2025 09:15:54 GMT+0000 (Coordinated Universal Time)
 //Base:<url id="cv1cref6o68qmpt26ol0" type="url" status="parsed" title="GitHub - echo094/decode-js: JS混淆代码的AST分析工具 AST analysis tool for obfuscated JS code" wc="2165">https://github.com/echo094/decode-js</url>
 //Modify:<url id="cv1cref6o68qmpt26olg" type="url" status="parsed" title="GitHub - smallfawn/decode_action: 世界上本来不存在加密，加密的人多了，也便成就了解密" wc="741">https://github.com/smallfawn/decode_action</url>
-const _0x4cc992 = new Env("Eric为你提供服务");
-let _0xa1b5f = $request.url;
-_0xa1b5f = _0xa1b5f.replace(/\w*play/g, "long");
-try {
-  const _0x49c4ec = _0x4cc992.getdata("scheme");
-  if (!_0x49c4ec) throw new Error("未能获取到 Scheme，请在 BoxJS 中进行配置。");
-  const _0x77d4f = _0x4cc992.getdata("capturedUrl");
-  if (!_0x77d4f || _0x77d4f !== _0xa1b5f) {
-    _0x4cc992.setdata(_0xa1b5f, "capturedUrl");
-    let _0x130e8f;
-    if (_0x49c4ec === "SenPlayer") _0x130e8f = "SenPlayer://x-callback-url/play?url=" + encodeURIComponent(_0xa1b5f);else _0x49c4ec === "Safari" ? _0x130e8f = _0xa1b5f : _0x130e8f = _0x49c4ec.includes("://") ? "" + _0x49c4ec + _0xa1b5f : _0x49c4ec + "://" + _0xa1b5f;
-    _0x4cc992.msg("Eric为你成功捕获视频", "本通知使用自定义浏览器", "点击自定义浏览器观看", {
-      "open-url": _0x130e8f
-    });
-  }
-} catch (_0x30f066) {
-  console.error("捕获 URL 时出现错误:", _0x30f066);
-}
-_0x4cc992.done({
-  "url": _0xa1b5f
-});
-function Env(t, e) {
-  class s {
-    constructor(t) {
-      this.env = t;
+(function () {
+  'use strict';
+
+  const _0x1a35db = document.createElement("button");
+  _0x1a35db.innerHTML = "解析视频";
+  _0x1a35db.style.cssText = "\n        position: fixed;\n        bottom: 20px;\n        right: 20px;\n        z-index: 9999;\n        padding: 12px 16px;\n        background: #4CAF50;\n        color: white;\n        border: none;\n        border-radius: 50px;\n        font-size: 16px;\n        cursor: pointer;\n        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);\n        touch-action: manipulation;\n        -webkit-tap-highlight-color: transparent;\n        @media (max-width: 768px) {\n            padding: 10px 14px;\n            font-size: 14px;\n            bottom: 15px;\n            right: 15px;\n        }\n    ";
+  const _0x1f2523 = document.createElement("div");
+  _0x1f2523.style.cssText = "\n        position: fixed;\n        bottom: 20px;\n        right: 120px;\n        z-index: 9999;\n        display: none;\n        flex-direction: row;\n        gap: 10px;\n        padding: 8px;\n        background: white;\n        border-radius: 8px;\n        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);\n        @media (max-width: 768px) {\n            right: 15px;\n            bottom: 60px;\n            flex-direction: column;\n            gap: 5px;\n        }\n    ";
+  const _0x4b6d40 = "\n        padding: 10px;\n        width: 140px;\n        font-size: 14px;\n        color: white;\n        border: none;\n        border-radius: 6px;\n        cursor: pointer;\n        text-align: center;\n        touch-action: manipulation;\n        -webkit-tap-highlight-color: transparent;\n        @media (max-width: 768px) {\n            width: 120px;\n            padding: 8px;\n            font-size: 13px;\n        }\n    ",
+    _0x287bdf = document.createElement("button");
+  _0x287bdf.innerHTML = "输入 PID 解析";
+  _0x287bdf.style.cssText = _0x4b6d40 + "background: #FF9800;";
+  const _0x312f71 = document.createElement("button");
+  _0x312f71.innerHTML = "直接解析";
+  _0x312f71.style.cssText = _0x4b6d40 + "background: #2196F3;";
+  _0x1f2523.appendChild(_0x287bdf);
+  _0x1f2523.appendChild(_0x312f71);
+  const _0x42fd77 = document.createElement("div");
+  _0x42fd77.style.cssText = "\n        position: fixed;\n        bottom: 80px;\n        right: 20px;\n        width: 320px;\n        padding: 15px;\n        background: white;\n        border-radius: 10px;\n        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);\n        text-align: center;\n        display: none;\n        @media (max-width: 768px) {\n            width: 90%;\n            max-width: 320px;\n            bottom: 70px;\n            right: 5%;\n            left: 5%;\n            padding: 12px;\n        }\n    ";
+  async function _0x146274(_0x25d01a) {
+    if (!_0x25d01a) {
+      alert("请输入有效的 PID");
+      return;
     }
-    send(t, e = "GET") {
-      t = "string" == typeof t ? {
-        url: t
-      } : t;
-      let s = this.get;
-      "POST" === e && (s = this.post);
-      return new Promise((e, a) => {
-        s.call(this, t, (t, s, r) => {
-          t ? a(t) : e(s);
-        });
-      });
-    }
-    get(t) {
-      return this.send.call(this.env, t);
-    }
-    post(t) {
-      return this.send.call(this.env, t, "POST");
-    }
-  }
-  return new class {
-    constructor(t, e) {
-      this.name = t;
-      this.http = new s(this);
-      this.data = null;
-      this.dataFile = "box.dat";
-      this.logs = [];
-      this.isMute = false;
-      this.isNeedRewrite = false;
-      this.logSeparator = "\n";
-      this.encoding = "utf-8";
-      this.startTime = new Date().getTime();
-      Object.assign(this, e);
-      this.log("", `🔔${this.name}, 开始!`);
-    }
-    getEnv() {
-      return "undefined" != typeof $environment && $environment["surge-version"] ? "Surge" : "undefined" != typeof $environment && $environment["stash-version"] ? "Stash" : "undefined" != typeof module && module.exports ? "Node.js" : "undefined" != typeof $task ? "Quantumult X" : "undefined" != typeof $loon ? "Loon" : "undefined" != typeof $rocket ? "Shadowrocket" : undefined;
-    }
-    isNode() {
-      return "Node.js" === this.getEnv();
-    }
-    isQuanX() {
-      return "Quantumult X" === this.getEnv();
-    }
-    isSurge() {
-      return "Surge" === this.getEnv();
-    }
-    isLoon() {
-      return "Loon" === this.getEnv();
-    }
-    isShadowrocket() {
-      return "Shadowrocket" === this.getEnv();
-    }
-    isStash() {
-      return "Stash" === this.getEnv();
-    }
-    toObj(t, e = null) {
-      try {
-        return JSON.parse(t);
-      } catch {
-        return e;
+    try {
+      const _0x96ad = await fetch("https://haijiao.com/api/topic/" + _0x25d01a);
+      if (!_0x96ad.headers.get("Content-Type")?.["includes"]("application/json")) {
+        throw new Error("无此资源");
       }
-    }
-    toStr(t, e = null) {
+      const _0x8abf44 = await _0x96ad.json();
+      let _0x45e9f0;
       try {
-        return JSON.stringify(t);
-      } catch {
-        return e;
+        _0x45e9f0 = JSON.parse(atob(atob(atob(_0x8abf44.data)))).attachments.filter(_0x2e0e8e => _0x2e0e8e.category === "video").map(_0x4c6482 => _0x4c6482.remoteUrl);
+      } catch (_0x790f83) {
+        throw new Error("数据解析失败");
       }
-    }
-    getjson(t, e) {
-      let s = e;
-      const a = this.getdata(t);
-      if (a) try {
-        s = JSON.parse(this.getdata(t));
-      } catch {}
-      return s;
-    }
-    setjson(t, e) {
-      try {
-        return this.setdata(JSON.stringify(t), e);
-      } catch {
-        return false;
-      }
-    }
-    getScript(t) {
-      return new Promise(e => {
-        this.get({
-          url: t
-        }, (t, s, a) => e(a));
-      });
-    }
-    runScript(t, e) {
-      return new Promise(s => {
-        let a = this.getdata("@chavy_boxjs_userCfgs.httpapi");
-        a = a ? a.replace(/\n/g, "").trim() : a;
-        let r = this.getdata("@chavy_boxjs_userCfgs.httpapi_timeout");
-        r = r ? 1 * r : 20;
-        r = e && e.timeout ? e.timeout : r;
-        const [i, o] = a.split("@"),
-          n = {
-            url: `http://${o}/v1/scripting/evaluate`,
-            body: {
-              script_text: t,
-              mock_type: "cron",
-              timeout: r
-            },
-            headers: {
-              "X-Key": i,
-              Accept: "*/*"
-            },
-            timeout: r
-          };
-        this.post(n, (t, e, a) => s(a));
-      }).catch(t => this.logErr(t));
-    }
-    loaddata() {
-      if (!this.isNode()) return {};
-      {
-        this.fs = this.fs ? this.fs : require("fs");
-        this.path = this.path ? this.path : require("path");
-        const t = this.path.resolve(this.dataFile),
-          e = this.path.resolve(process.cwd(), this.dataFile),
-          s = this.fs.existsSync(t),
-          a = !s && this.fs.existsSync(e);
-        if (!s && !a) return {};
+      if (!_0x45e9f0.length || !_0x45e9f0[0]) {
         {
-          const a = s ? t : e;
-          try {
-            return JSON.parse(this.fs.readFileSync(a));
-          } catch (t) {
-            return {};
+          const _0x25abcf = JSON.parse(atob(atob(atob(_0x8abf44.data)))).attachments.filter(_0x32be0b => _0x32be0b.category === "video").map(_0x3ed3fd => _0x3ed3fd.coverUrl),
+            _0xca9b54 = _0x25abcf[0].match(/(\/hjstore\/video\/[^/]+\/[^/]+\/\d+)/);
+          _0xca9b54 && (_0x45e9f0[0] = "https://ts3.hjbd81.top" + _0xca9b54[0] + "_i_preview.m3u8");
+          console.log(_0x45e9f0[0]);
+        }
+      }
+      if (!_0x45e9f0[0].includes("preview")) {
+        alert("免费视频无需解析");
+        return;
+      }
+      const _0x3682af = _0x45e9f0[0].replace(/\/[^\/]+$/, "/");
+      let _0x1733ee = await fetch(_0x45e9f0[0]),
+        _0x1c3b9a = await _0x1733ee.text();
+      const _0x141ef6 = _0x1c3b9a.split("\n"),
+        _0x40fc16 = new Set();
+      _0x141ef6.forEach(_0x3078e7 => {
+        _0x3078e7 = _0x3078e7.trim();
+        if (_0x3078e7.endsWith(".ts")) {
+          const _0x224d91 = _0x3078e7.match(/([^\/]+)_i\d+\.ts/);
+          _0x224d91 && _0x40fc16.add(_0x224d91[1]);
+        }
+      });
+      if (_0x40fc16.size === 0) {
+        throw new Error("未能解析出有效的视频地址");
+      }
+      let _0x1a36d3 = [..._0x40fc16][0],
+        _0x173355 = _0x3682af + _0x1a36d3 + "_i.m3u8";
+      _0x42fd77.style.display = "block";
+      _0x42fd77.innerHTML = "\n                <h3 style=\"color: #4CAF50; margin: 0 0 10px 0; font-size: 16px;\">解析成功</h3>\n                <p style=\"word-wrap: break-word; margin: 0 0 10px 0; font-size: 13px;\">" + _0x173355 + "</p>\n                <div style=\"display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;\">\n                    <button id=\"copyBtn\" style=\"background: #4CAF50; padding: 6px 12px; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 13px; flex: 1; min-width: 80px;\">复制链接</button>\n                    <button id=\"playBtn\" style=\"background: #2196F3; padding: 6px 12px; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 13px; flex: 1; min-width: 80px;\">播放视频</button>\n                    <button id=\"closeResult\" style=\"background: #d32f2f; padding: 6px 12px; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 13px; flex: 1; min-width: 80px;\">关闭</button>\n                </div>\n            ";
+      document.getElementById("copyBtn").addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(_0x173355);
+          alert("链接已复制到剪贴板！");
+        } catch (_0x5f33b4) {
+          alert("复制失败：" + _0x5f33b4);
+        }
+      });
+      document.getElementById("playBtn").addEventListener("click", () => {
+        const _0x2d337e = document.createElement("div");
+        _0x2d337e.style.cssText = "\n                        position: fixed;\n                        top: 50%;\n                        left: 50%;\n                        transform: translate(-50%, -50%);\n                        background: black;\n                        padding: 20px;\n                        z-index: 10000;\n                        border-radius: 8px;\n                        cursor: move;\n                        @media (max-width: 768px) {\n                            width: 95%;\n                            padding: 10px;\n                            max-height: 90vh;\n                            overflow-y: auto;\n                        }\n                    ";
+        let _0x437b04 = false,
+          _0x276a5b,
+          _0x572431,
+          _0x23d300,
+          _0x52229b,
+          _0x3fdd72 = 0,
+          _0x3aa5f6 = 0;
+        _0x2d337e.addEventListener("mousedown", _0x3ce055);
+        document.addEventListener("mousemove", _0x4a433f);
+        document.addEventListener("mouseup", _0x287a1b);
+        function _0x3ce055(_0x2b7447) {
+          _0x23d300 = _0x2b7447.clientX - _0x3fdd72;
+          _0x52229b = _0x2b7447.clientY - _0x3aa5f6;
+          _0x2b7447.target === _0x2d337e && (_0x437b04 = true);
+        }
+        function _0x4a433f(_0xa5dbc8) {
+          {
+            if (_0x437b04) {
+              _0xa5dbc8.preventDefault();
+              _0x276a5b = _0xa5dbc8.clientX - _0x23d300;
+              _0x572431 = _0xa5dbc8.clientY - _0x52229b;
+              _0x3fdd72 = _0x276a5b;
+              _0x3aa5f6 = _0x572431;
+              _0x2d337e.style.transform = "translate(" + _0x276a5b + "px, " + _0x572431 + "px)";
+            }
           }
         }
-      }
-    }
-    writedata() {
-      if (this.isNode()) {
-        this.fs = this.fs ? this.fs : require("fs");
-        this.path = this.path ? this.path : require("path");
-        const t = this.path.resolve(this.dataFile),
-          e = this.path.resolve(process.cwd(), this.dataFile),
-          s = this.fs.existsSync(t),
-          a = !s && this.fs.existsSync(e),
-          r = JSON.stringify(this.data);
-        s ? this.fs.writeFileSync(t, r) : a ? this.fs.writeFileSync(e, r) : this.fs.writeFileSync(t, r);
-      }
-    }
-    lodash_get(t, e, s) {
-      const a = e.replace(/\[(\d+)\]/g, ".$1").split(".");
-      let r = t;
-      for (const t of a) if (r = Object(r)[t], undefined === r) return s;
-      return r;
-    }
-    lodash_set(t, e, s) {
-      return Object(t) !== t ? t : (Array.isArray(e) || (e = e.toString().match(/[^.[\]]+/g) || []), e.slice(0, -1).reduce((t, s, a) => Object(t[s]) === t[s] ? t[s] : t[s] = Math.abs(e[a + 1]) >> 0 == +e[a + 1] ? [] : {}, t)[e[e.length - 1]] = s, t);
-    }
-    getdata(t) {
-      let e = this.getval(t);
-      if (/^@/.test(t)) {
-        const [, s, a] = /^@(.*?)\.(.*?)$/.exec(t),
-          r = s ? this.getval(s) : "";
-        if (r) try {
-          const t = JSON.parse(r);
-          e = t ? this.lodash_get(t, a, "") : e;
-        } catch (t) {
-          e = "";
+        function _0x287a1b() {
+          _0x437b04 = false;
         }
-      }
-      return e;
+        const _0x553145 = document.createElement("video");
+        _0x553145.style.cssText = "\n                        max-width: 800px;\n                        max-height: 600px;\n                        display: block;\n                        margin-bottom: 10px;\n                        @media (max-width: 768px) {\n                            max-width: 100%;\n                            max-height: 50vh;\n                        }\n                    ";
+        _0x553145.controls = true;
+        _0x553145.autoplay = true;
+        const _0x15c60b = document.createElement("button");
+        _0x15c60b.innerHTML = "关闭播放";
+        _0x15c60b.style.cssText = "\n                        background: red;\n                        color: white;\n                        border: none;\n                        padding: 6px 12px;\n                        border-radius: 4px;\n                        cursor: pointer;\n                        display: block;\n                        margin: 8px auto 0;\n                        width: 100%;\n                        font-size: 13px;\n                        @media (max-width: 768px) {\n                            padding: 4px 10px;\n                        }\n                    ";
+        _0x15c60b.onclick = () => _0x2d337e.remove();
+        if (Hls.isSupported()) {
+          {
+            const _0x43dc9b = new Hls();
+            _0x43dc9b.loadSource(_0x173355);
+            _0x43dc9b.attachMedia(_0x553145);
+          }
+        } else _0x553145.canPlayType("application/vnd.apple.mpegurl") && (_0x553145.src = _0x173355);
+        _0x2d337e.appendChild(_0x553145);
+        _0x2d337e.appendChild(_0x15c60b);
+        document.body.appendChild(_0x2d337e);
+      });
+      document.getElementById("closeResult").addEventListener("click", () => {
+        _0x42fd77.style.display = "none";
+      });
+    } catch (_0x5511e3) {
+      _0x42fd77.style.display = "block";
+      _0x42fd77.innerHTML = "\n                <h3 style=\"margin: 0 0 10px 0; font-size: 16px; color: #d32f2f;\">解析失败：</h3>\n                <pre style=\"margin: 0 0 10px 0; font-size: 13px; white-space: pre-wrap; word-break: break-all;\">" + _0x5511e3.message + "</pre>\n                <button id=\"closeResult\" style=\"background: #d32f2f; padding: 6px 12px; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 13px; width: 100%;\">关闭</button>\n            ";
+      alert(_0x5511e3.message);
+      document.getElementById("closeResult").addEventListener("click", () => {
+        _0x42fd77.style.display = "none";
+      });
     }
-    setdata(t, e) {
-      let s = false;
-      if (/^@/.test(e)) {
-        const [, a, r] = /^@(.*?)\.(.*?)$/.exec(e),
-          i = this.getval(a),
-          o = a ? "null" === i ? null : i || "{}" : "{}";
-        try {
-          const e = JSON.parse(o);
-          this.lodash_set(e, r, t);
-          s = this.setval(JSON.stringify(e), a);
-        } catch (e) {
-          const i = {};
-          this.lodash_set(i, r, t);
-          s = this.setval(JSON.stringify(i), a);
-        }
-      } else s = this.setval(t, e);
-      return s;
+  }
+  _0x1a35db.addEventListener("click", () => {
+    _0x1f2523.style.display = _0x1f2523.style.display === "none" ? "flex" : "none";
+  });
+  _0x287bdf.addEventListener("click", () => {
+    {
+      const _0x1d000a = prompt("请输入 PID:");
+      if (_0x1d000a) _0x146274(_0x1d000a.trim());
     }
-    getval(t) {
-      switch (this.getEnv()) {
-        case "Surge":
-        case "Loon":
-        case "Stash":
-        case "Shadowrocket":
-          return $persistentStore.read(t);
-        case "Quantumult X":
-          return $prefs.valueForKey(t);
-        case "Node.js":
-          this.data = this.loaddata();
-          return this.data[t];
-        default:
-          return this.data && this.data[t] || null;
-      }
-    }
-    setval(t, e) {
-      switch (this.getEnv()) {
-        case "Surge":
-        case "Loon":
-        case "Stash":
-        case "Shadowrocket":
-          return $persistentStore.write(t, e);
-        case "Quantumult X":
-          return $prefs.setValueForKey(t, e);
-        case "Node.js":
-          this.data = this.loaddata();
-          this.data[e] = t;
-          this.writedata();
-          return true;
-        default:
-          return this.data && this.data[e] || null;
-      }
-    }
-    initGotEnv(t) {
-      this.got = this.got ? this.got : require("got");
-      this.cktough = this.cktough ? this.cktough : require("tough-cookie");
-      this.ckjar = this.ckjar ? this.ckjar : new this.cktough.CookieJar();
-      t && (t.headers = t.headers ? t.headers : {}, undefined === t.headers.Cookie && undefined === t.cookieJar && (t.cookieJar = this.ckjar));
-    }
-    get(t, e = () => {}) {
-      switch (t.headers && (delete t.headers["Content-Type"], delete t.headers["Content-Length"], delete t.headers["content-type"], delete t.headers["content-length"]), t.params && (t.url += "?" + this.queryStr(t.params)), this.getEnv()) {
-        case "Surge":
-        case "Loon":
-        case "Stash":
-        case "Shadowrocket":
-        default:
-          this.isSurge() && this.isNeedRewrite && (t.headers = t.headers || {}, Object.assign(t.headers, {
-            "X-Surge-Skip-Scripting": false
-          }));
-          $httpClient.get(t, (t, s, a) => {
-            !t && s && (s.body = a, s.statusCode = s.status ? s.status : s.statusCode, s.status = s.statusCode);
-            e(t, s, a);
-          });
-          break;
-        case "Quantumult X":
-          this.isNeedRewrite && (t.opts = t.opts || {}, Object.assign(t.opts, {
-            hints: false
-          }));
-          $task.fetch(t).then(t => {
-            const {
-              statusCode: s,
-              statusCode: a,
-              headers: r,
-              body: i,
-              bodyBytes: o
-            } = t;
-            e(null, {
-              status: s,
-              statusCode: a,
-              headers: r,
-              body: i,
-              bodyBytes: o
-            }, i, o);
-          }, t => e(t && t.error || "UndefinedError"));
-          break;
-        case "Node.js":
-          let s = require("iconv-lite");
-          this.initGotEnv(t);
-          this.got(t).on("redirect", (t, e) => {
-            try {
-              if (t.headers["set-cookie"]) {
-                const s = t.headers["set-cookie"].map(this.cktough.Cookie.parse).toString();
-                s && this.ckjar.setCookieSync(s, null);
-                e.cookieJar = this.ckjar;
-              }
-            } catch (t) {
-              this.logErr(t);
-            }
-          }).then(t => {
-            const {
-                statusCode: a,
-                statusCode: r,
-                headers: i,
-                rawBody: o
-              } = t,
-              n = s.decode(o, this.encoding);
-            e(null, {
-              status: a,
-              statusCode: r,
-              headers: i,
-              rawBody: o,
-              body: n
-            }, n);
-          }, t => {
-            const {
-              message: a,
-              response: r
-            } = t;
-            e(a, r, r && s.decode(r.rawBody, this.encoding));
-          });
-      }
-    }
-    post(t, e = () => {}) {
-      const s = t.method ? t.method.toLocaleLowerCase() : "post";
-      switch (t.body && t.headers && !t.headers["Content-Type"] && !t.headers["content-type"] && (t.headers["content-type"] = "application/x-www-form-urlencoded"), t.headers && (delete t.headers["Content-Length"], delete t.headers["content-length"]), this.getEnv()) {
-        case "Surge":
-        case "Loon":
-        case "Stash":
-        case "Shadowrocket":
-        default:
-          this.isSurge() && this.isNeedRewrite && (t.headers = t.headers || {}, Object.assign(t.headers, {
-            "X-Surge-Skip-Scripting": false
-          }));
-          $httpClient[s](t, (t, s, a) => {
-            !t && s && (s.body = a, s.statusCode = s.status ? s.status : s.statusCode, s.status = s.statusCode);
-            e(t, s, a);
-          });
-          break;
-        case "Quantumult X":
-          t.method = s;
-          this.isNeedRewrite && (t.opts = t.opts || {}, Object.assign(t.opts, {
-            hints: false
-          }));
-          $task.fetch(t).then(t => {
-            const {
-              statusCode: s,
-              statusCode: a,
-              headers: r,
-              body: i,
-              bodyBytes: o
-            } = t;
-            e(null, {
-              status: s,
-              statusCode: a,
-              headers: r,
-              body: i,
-              bodyBytes: o
-            }, i, o);
-          }, t => e(t && t.error || "UndefinedError"));
-          break;
-        case "Node.js":
-          let a = require("iconv-lite");
-          this.initGotEnv(t);
-          const {
-            url: r,
-            ...i
-          } = t;
-          this.got[s](r, i).then(t => {
-            const {
-                statusCode: s,
-                statusCode: r,
-                headers: i,
-                rawBody: o
-              } = t,
-              n = a.decode(o, this.encoding);
-            e(null, {
-              status: s,
-              statusCode: r,
-              headers: i,
-              rawBody: o,
-              body: n
-            }, n);
-          }, t => {
-            const {
-              message: s,
-              response: r
-            } = t;
-            e(s, r, r && a.decode(r.rawBody, this.encoding));
-          });
-      }
-    }
-    time(t, e = null) {
-      const s = e ? new Date(e) : new Date();
-      let a = {
-        "M+": s.getMonth() + 1,
-        "d+": s.getDate(),
-        "H+": s.getHours(),
-        "m+": s.getMinutes(),
-        "s+": s.getSeconds(),
-        "q+": Math.floor((s.getMonth() + 3) / 3),
-        S: s.getMilliseconds()
-      };
-      /(y+)/.test(t) && (t = t.replace(RegExp.$1, (s.getFullYear() + "").substr(4 - RegExp.$1.length)));
-      for (let e in a) new RegExp("(" + e + ")").test(t) && (t = t.replace(RegExp.$1, 1 == RegExp.$1.length ? a[e] : ("00" + a[e]).substr(("" + a[e]).length)));
-      return t;
-    }
-    queryStr(t) {
-      let e = "";
-      for (const s in t) {
-        let a = t[s];
-        null != a && "" !== a && ("object" == typeof a && (a = JSON.stringify(a)), e += `${s}=${a}&`);
-      }
-      e = e.substring(0, e.length - 1);
-      return e;
-    }
-    msg(e = t, s = "", a = "", r) {
-      const i = t => {
-        switch (typeof t) {
-          case undefined:
-            return t;
-          case "string":
-            switch (this.getEnv()) {
-              case "Surge":
-              case "Stash":
-              default:
-                return {
-                  url: t
-                };
-              case "Loon":
-              case "Shadowrocket":
-                return t;
-              case "Quantumult X":
-                return {
-                  "open-url": t
-                };
-              case "Node.js":
-                return;
-            }
-          case "object":
-            switch (this.getEnv()) {
-              case "Surge":
-              case "Stash":
-              case "Shadowrocket":
-              default:
-                {
-                  let e = t.url || t.openUrl || t["open-url"];
-                  return {
-                    url: e
-                  };
-                }
-              case "Loon":
-                {
-                  let e = t.openUrl || t.url || t["open-url"],
-                    s = t.mediaUrl || t["media-url"];
-                  return {
-                    openUrl: e,
-                    mediaUrl: s
-                  };
-                }
-              case "Quantumult X":
-                {
-                  let e = t["open-url"] || t.url || t.openUrl,
-                    s = t["media-url"] || t.mediaUrl,
-                    a = t["update-pasteboard"] || t.updatePasteboard;
-                  return {
-                    "open-url": e,
-                    "media-url": s,
-                    "update-pasteboard": a
-                  };
-                }
-              case "Node.js":
-                return;
-            }
-          default:
-            return;
-        }
-      };
-      if (!this.isMute) switch (this.getEnv()) {
-        case "Surge":
-        case "Loon":
-        case "Stash":
-        case "Shadowrocket":
-        default:
-          $notification.post(e, s, a, i(r));
-          break;
-        case "Quantumult X":
-          $notify(e, s, a, i(r));
-          break;
-        case "Node.js":
-      }
-      if (!this.isMuteLog) {
-        let t = ["", "==============📣系统通知📣=============="];
-        t.push(e);
-        s && t.push(s);
-        a && t.push(a);
-        console.log(t.join("\n"));
-        this.logs = this.logs.concat(t);
-      }
-    }
-    log(...t) {
-      t.length > 0 && (this.logs = [...this.logs, ...t]);
-      console.log(t.join(this.logSeparator));
-    }
-    logErr(t, e) {
-      switch (this.getEnv()) {
-        case "Surge":
-        case "Loon":
-        case "Stash":
-        case "Shadowrocket":
-        case "Quantumult X":
-        default:
-          this.log("", `❗️${this.name}, 错误!`, t);
-          break;
-        case "Node.js":
-          this.log("", `❗️${this.name}, 错误!`, t.stack);
-      }
-    }
-    wait(t) {
-      return new Promise(e => setTimeout(e, t));
-    }
-    done(t = {}) {
-      const e = new Date().getTime(),
-        s = (e - this.startTime) / 1000;
-      switch (this.log("", `🔔${this.name}, 结束! 🕛 ${s} 秒`), this.log(), this.getEnv()) {
-        case "Surge":
-        case "Loon":
-        case "Stash":
-        case "Shadowrocket":
-        case "Quantumult X":
-        default:
-          $done(t);
-          break;
-        case "Node.js":
-          process.exit(1);
-      }
-    }
-  }(t, e);
-}
+  });
+  _0x312f71.addEventListener("click", () => {
+    const _0xb60648 = new URL(window.location.href),
+      _0x4a2a0b = new URLSearchParams(_0xb60648.search),
+      _0x7c7a46 = _0x4a2a0b.get("pid");
+    _0x146274(_0x7c7a46);
+  });
+  document.body.appendChild(_0x1a35db);
+  document.body.appendChild(_0x1f2523);
+  document.body.appendChild(_0x42fd77);
+})();
