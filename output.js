@@ -1,4 +1,4 @@
-//Tue Oct 28 2025 04:47:29 GMT+0000 (Coordinated Universal Time)
+//Tue Oct 28 2025 05:20:23 GMT+0000 (Coordinated Universal Time)
 //Base:<url id="cv1cref6o68qmpt26ol0" type="url" status="parsed" title="GitHub - echo094/decode-js: JS混淆代码的AST分析工具 AST analysis tool for obfuscated JS code" wc="2165">https://github.com/echo094/decode-js</url>
 //Modify:<url id="cv1cref6o68qmpt26olg" type="url" status="parsed" title="GitHub - smallfawn/decode_action: 世界上本来不存在加密，加密的人多了，也便成就了解密" wc="741">https://github.com/smallfawn/decode_action</url>
 (function (X) {
@@ -188,8 +188,12 @@
         b = Number[X[1]];
       }
       for (j = m(71831); l(j, F); ++j) {
-        g(H[j], r) && (r = H[j]);
-        l(H[j], b) && (b = H[j]);
+        if (g(H[j], r)) {
+          r = H[j];
+        }
+        if (l(H[j], b)) {
+          b = H[j];
+        }
       }
       for (o = (C = v(k(-94931), r), G = new (y ? A : Array)(C), R = k(-94931), s = m(71831), k(-94930)); u(R, r);) {
         for (j = m(71831); l(j, F); ++j) if (H[j] === R) {
@@ -278,7 +282,9 @@
       }
       const r = B();
       for ((((H = o[r.H]) && 0 || (R = o[r.r]) || true) && (u = o[r.c]) || 3) && (G = o.c) && 0 || (g = u[r.E]); l(R, A);) {
-        U(G, g) && L(Error(r.v));
+        if (U(G, g)) {
+          L(Error(r.v));
+        }
         H |= v(u[G++], R);
         R += k(-94924);
       }
@@ -674,7 +680,9 @@ function Env(a, b) {
             } = a.match(/^@(?<key>[^.]+)(?:.(?<path>.*))?$/)?.groups;
             a = b;
             let e = this.getItem(a, {});
-            "object" != typeof e && (e = {});
+            if ("object" != typeof e) {
+              e = {};
+            }
             c = this.lodash_get(e, d);
             try {
               c = JSON.parse(c);
@@ -736,7 +744,9 @@ function Env(a, b) {
             } = a.match(/^@(?<key>[^.]+)(?:.(?<path>.*))?$/)?.groups;
             a = d;
             let f = this.getItem(a, {});
-            "object" != typeof f && (f = {});
+            if ("object" != typeof f) {
+              f = {};
+            }
             this.lodash_set(f, e, b);
             c = this.setItem(a, f);
             break;
@@ -808,11 +818,20 @@ function Env(a, b) {
           {}
         default:
           {
-            a.policy && (this.isLoon() && (a.node = a.policy), this.isStash() && this.lodash_set(a, "headers.X-Stash-Selected-Proxy", encodeURI(a.policy)));
-            a.followRedirect && ((this.isSurge() || this.isLoon()) && (a["auto-redirect"] = !1), this.isQuanX() && (a.opts ? a.opts.redirection = !1 : a.opts = {
-              redirection: !1
-            }));
-            a.bodyBytes && !a.body && (a.body = a.bodyBytes, delete a.bodyBytes);
+            if (a.policy) {
+              this.isLoon() && (a.node = a.policy);
+              this.isStash() && this.lodash_set(a, "headers.X-Stash-Selected-Proxy", encodeURI(a.policy));
+            }
+            if (a.followRedirect) {
+              (this.isSurge() || this.isLoon()) && (a["auto-redirect"] = !1);
+              this.isQuanX() && (a.opts ? a.opts.redirection = !1 : a.opts = {
+                redirection: !1
+              });
+            }
+            if (a.bodyBytes && !a.body) {
+              a.body = a.bodyBytes;
+              delete a.bodyBytes;
+            }
             return await new Promise((b, d) => {
               $httpClient[c](a, (c, e, f) => {
                 c ? d(c) : (e.ok = /^2dd$/.test(e.status), e.statusCode = e.status, f && (e.body = f, !0 == a["binary-mode"] && (e.bodyBytes = f)), b(e));
@@ -821,8 +840,12 @@ function Env(a, b) {
           }
         case "Quantumult X":
           {
-            a.policy && this.lodash_set(a, "opts.policy", a.policy);
-            "boolean" == typeof a["auto-redirect"] && this.lodash_set(a, "opts.redirection", a["auto-redirect"]);
+            if (a.policy) {
+              this.lodash_set(a, "opts.policy", a.policy);
+            }
+            if ("boolean" == typeof a["auto-redirect"]) {
+              this.lodash_set(a, "opts.redirection", a["auto-redirect"]);
+            }
             a.body instanceof ArrayBuffer ? (a.bodyBytes = a.body, delete a.body) : ArrayBuffer.isView(a.body) ? (a.bodyBytes = a.body.buffer.slice(a.body.byteOffset, a.body.byteLength + a.body.byteOffset), delete object.body) : a.body && delete a.bodyBytes;
             return await $task.fetch(a).then(a => (a.ok = /^2dd$/.test(a.statusCode), a.status = a.statusCode, a), a => Promise.reject(a.error));
           }
@@ -980,7 +1003,9 @@ function Env(a, b) {
       }
     }
     log(...a) {
-      0 < a.length && (this.logs = [...this.logs, ...a]);
+      if (0 < a.length) {
+        this.logs = [...this.logs, ...a];
+      }
       console.log(a.join(this.logSeparator));
     }
     logErr(a, b) {
@@ -1012,19 +1037,25 @@ function Env(a, b) {
       switch (this.log("", "🔔" + this.name + ", 结束! 🕛" + c + "秒"), this.platform()) {
         case "Surge":
           {
-            a.policy && this.lodash_set(a, "headers.X-Surge-Policy", a.policy);
+            if (a.policy) {
+              this.lodash_set(a, "headers.X-Surge-Policy", a.policy);
+            }
             $done(a);
             break;
           }
         case "Loon":
           {
-            a.policy && (a.node = a.policy);
+            if (a.policy) {
+              a.node = a.policy;
+            }
             $done(a);
             break;
           }
         case "Stash":
           {
-            a.policy && this.lodash_set(a, "headers.X-Stash-Selected-Proxy", encodeURI(a.policy));
+            if (a.policy) {
+              this.lodash_set(a, "headers.X-Stash-Selected-Proxy", encodeURI(a.policy));
+            }
             $done(a);
             break;
           }
@@ -1042,7 +1073,9 @@ function Env(a, b) {
           }
         case "Quantumult X":
           {
-            a.policy && this.lodash_set(a, "opts.policy", a.policy);
+            if (a.policy) {
+              this.lodash_set(a, "opts.policy", a.policy);
+            }
             delete a["auto-redirect"];
             delete a["auto-cookie"];
             delete a["binary-mode"];
